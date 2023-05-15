@@ -328,7 +328,7 @@ def main(opt):
                 # embeddings2 = embeddings2 / embeddings2_norm
                 # embeddings = (opt.alpha * embeddings1 + (1 - opt.alpha) * embeddings2) * embeddings2_norm
 
-                embeddings = (opt.alpha * embeddings1 + (1 - opt.alpha) * embeddings2)
+                embeddings = (opt.alpha * 20.0 * embeddings1 + (1 - opt.alpha) * embeddings2)
 
                 c_adm = repeat(embeddings, '1 ... -> b ...', b=batch_size) * opt.strength
 
