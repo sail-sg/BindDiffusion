@@ -119,6 +119,11 @@ def parse_args():
         help="use plms sampling",
     )
     parser.add_argument(
+        "--uc-keep",
+        action='store_true',
+        help="use plms sampling",
+    )
+    parser.add_argument(
         "--dpm",
         action='store_true',
         help="use DPM (2) sampler",
@@ -331,7 +336,10 @@ def main(opt):
                     c_adm = torch.cat((c_adm, noise_level_emb), 1)
                 if opt.scale != 1.0:
                     uc = model.get_learned_conditioning(batch_size * [n_prompt])
-                uc = {"c_crossattn": [uc], "c_adm": torch.zeros_like(c_adm)}
+                if not opt.uc_keep:
+                    uc = {"c_crossattn": [uc], "c_adm": torch.zeros_like(c_adm)}
+                else:
+                    uc = {"c_crossattn": [uc], "c_adm": c_adm}
                 if isinstance(prompts, tuple):
                     prompts = list(prompts)
                 c = {"c_crossattn": [model.get_learned_conditioning(prompts)], "c_adm": c_adm}
