@@ -320,14 +320,15 @@ def main(opt):
                     ModalityType.VISION: init_image,
                 }
                 outs = model.embedder(inputs, normalize=False)
-                # embeddings1 = model.embedder.model.modality_postprocessors[ModalityType.AUDIO](outs[ModalityType.AUDIO])
                 embeddings1 = outs[ModalityType.AUDIO]
                 embeddings2 = outs[ModalityType.VISION]
 
-                embeddings1 = embeddings1 / torch.norm(embeddings1, dim=-1, keepdim=True)
-                embeddings2_norm = torch.norm(embeddings2, dim=-1, keepdim=True)
-                embeddings2 = embeddings2 / embeddings2_norm
-                embeddings = (opt.alpha * embeddings1 + (1 - opt.alpha) * embeddings2) * embeddings2_norm
+                # embeddings1 = embeddings1 / torch.norm(embeddings1, dim=-1, keepdim=True)
+                # embeddings2_norm = torch.norm(embeddings2, dim=-1, keepdim=True)
+                # embeddings2 = embeddings2 / embeddings2_norm
+                # embeddings = (opt.alpha * embeddings1 + (1 - opt.alpha) * embeddings2) * embeddings2_norm
+
+                embeddings = (opt.alpha * embeddings1 + (1 - opt.alpha) * embeddings2)
 
                 c_adm = repeat(embeddings, '1 ... -> b ...', b=batch_size) * opt.strength
 
