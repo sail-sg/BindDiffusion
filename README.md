@@ -39,7 +39,7 @@ python main_bind.py --prompt <prompt> --device cuda --modality audio \
 ![t2i](assets/example_audio2img5.png)
 ![t2i](assets/example_audio2img6.png)
 
-### Mixed-modality generation:
+### Naive mixed-modality generation:
 ```
 python main_multi_bind.py --prompt "a photo" --device cuda \
 --H 768 --W 768 \
