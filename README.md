@@ -19,7 +19,7 @@ wget https://dl.fbaipublicfiles.com/imagebind/imagebind_huge.pth;
 python main_bind.py --prompt <prompt> --device cuda --modality image \
 --H 768 --W 768 \
 --config <init-config> --ckpt <init-ckpt> \
---noise-level <noise-level> --init <init-img>
+--noise-level <noise-level> --init <init-img> --strength <strength-level>
 ```
 ![t2i](assets/example_img2img.png)
 ![t2i](assets/example_img2img2.png)
