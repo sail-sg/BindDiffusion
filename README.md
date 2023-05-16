@@ -1,7 +1,6 @@
 # BindDiffusion: One Diffusion Model to Bind Them All
-Inspired by the recent progress in multimodality learning ([ImageBind](https://github.com/facebookresearch/ImageBind)), we leverage a pre-trained diffusion model that is able to comsume conditions from diverse or even mixed modalities.
-
-Noticeably, the proposed design allows many novel applications, such as audio-to-image, without any additional training. This repo is still under development. Please stay tuned!
+Inspired by the recent progress in multimodality learning ([ImageBind](https://github.com/facebookresearch/ImageBind)), we explore the idea of using one single diffusion model for multimodality-based image generation. Noticeably, we leverage a pre-trained diffusion model to comsume conditions from diverse or even mixed modalities.
+This design allows many novel applications, such as audio-to-image, without any additional training. This repo is still under development. Please stay tuned!
 
 Acknowledgement: This repo is based on the following amazing projects: [Stable Diffusion](https://github.com/Stability-AI/stablediffusion),
 [ImageBind](https://github.com/facebookresearch/ImageBind).
