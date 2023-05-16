@@ -1,25 +1,31 @@
 # BindDiffusion: One Diffusion Model to Bind Them All
-Motivated by [ImageBind](https://github.com/facebookresearch/ImageBind), we realize that 
-we can build a shared diffusion model conditioned on different modalities.
+Inspired by the recent progress in multimodality learning ([ImageBind](https://github.com/facebookresearch/ImageBind)), we develop a new diffusion model that is able to comsume conditions from diverse or even mixed modalities.
 
-### Ongoing
-- More modalities.
-- Further fine-tuning for each modality. 
-- Better way to fuse different modalities.
+Noticeably, the proposed design allows many novel applications, such as audio-to-image, without any additional training. This repo is still under development. Please stay tuned!
+
+Acknowledgement: This repo is based on the following amazing projects: [Stable Diffusion](https://github.com/Stability-AI/stablediffusion),
+[ImageBind](https://github.com/facebookresearch/ImageBind).
+
+
+
+### Install
+``` bash
+pip install -r requirements.txt
+```
 
 ### Pretrained checkpoints
 ```
 cd checkpoints;
 wget https://huggingface.co/stabilityai/stable-diffusion-2-1-unclip/blob/main/sd21-unclip-h.ckpt;
 wget https://dl.fbaipublicfiles.com/imagebind/imagebind_huge.pth;
-wget https://huggingface.co/lllyasviel/ControlNet/resolve/main/annotator/ckpts/dpt_hybrid-midas-501f0c75.pt;
 ```
 
 ### Image-conditioned generation:
-```
-python main_bind.py --prompt <prompt> --device cuda --modality image \
---H 768 --W 768 \
---config <init-config> --ckpt <init-ckpt> \
+``` bash
+python main_bind.py --prompt "" --device cuda --modality image \
+--H 768 --W 768 \ 
+--config ./configs/stable-diffusion/v2-1-stable-unclip-h-bind-inference.yaml \
+--ckpt ./checkpoints/sd21-unclip-h.ckpt \
 --noise-level <noise-level> --init <init-img>
 ```
 ![t2i](assets/example_img2img.png)
@@ -29,8 +35,9 @@ python main_bind.py --prompt <prompt> --device cuda --modality image \
 ```
 python main_bind.py --prompt <prompt> --device cuda --modality audio \
 --H 768 --W 768 \
---config <init-config> --ckpt <init-ckpt> \
---noise-level <noise-level> --init <init-audio>
+--config ./configs/stable-diffusion/v2-1-stable-unclip-h-bind-inference.yaml \
+--ckpt ./checkpoints/sd21-unclip-h.ckpt \
+--strength <strength-level> --noise-level <noise-level> --init <init-audio>
 ```
 ![t2i](assets/example_audio2img.png)
 ![t2i](assets/example_audio2img2.png)
@@ -39,13 +46,15 @@ python main_bind.py --prompt <prompt> --device cuda --modality audio \
 ![t2i](assets/example_audio2img5.png)
 ![t2i](assets/example_audio2img6.png)
 
+
 ### Naive mixed-modality generation:
 ```
-python main_multi_bind.py --prompt "a photo" --device cuda \
+python main_multi_bind.py --prompt <prompt> --device cuda \
 --H 768 --W 768 \
---config <init-config> --ckpt <init-ckpt> \
+--config ./configs/stable-diffusion/v2-1-stable-unclip-h-bind-inference.yaml \
+--ckpt ./checkpoints/sd21-unclip-h.ckpt \
 --noise-level <noise-level> --init-image <init-img> --init-audio <init-audio> \
---alpha 0.5
+--alpha <alpha>
 ```
 
 ![t2i](assets/example_multi_modality.png)
@@ -53,8 +62,13 @@ python main_multi_bind.py --prompt "a photo" --device cuda \
 ![t2i](assets/example_multi_modality3.png)
 ![t2i](assets/example_multi_modality4.png)
 
-### Acknowledgement
-Thanks for these following amazing projects!
-
-[Stable Diffusion](https://github.com/Stability-AI/stablediffusion),
-[ImageBind](https://github.com/facebookresearch/ImageBind)
+### Bibtex
+Please cite us if you find this repo useful :)
+```
+@misc{binddiffusion,
+  author = {Lin, Zhijie and Liu, Lijuan and Wang, Yangzihao and Xu, Xiangyu},
+  title = {BindDiffusion: One Diffusion Model to Bind Them All},
+  year = {2023},
+  howpublished = {\url{https://github.com/sail-sg/BindDiffusion}}
+}
+```
