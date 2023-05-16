@@ -12,7 +12,6 @@ we can build a shared diffusion model conditioned on different modalities.
 cd checkpoints;
 wget https://huggingface.co/stabilityai/stable-diffusion-2-1-unclip/blob/main/sd21-unclip-h.ckpt;
 wget https://dl.fbaipublicfiles.com/imagebind/imagebind_huge.pth;
-wget https://huggingface.co/lllyasviel/ControlNet/resolve/main/annotator/ckpts/dpt_hybrid-midas-501f0c75.pt;
 ```
 
 ### Image-conditioned generation:

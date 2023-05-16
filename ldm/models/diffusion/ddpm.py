@@ -1810,10 +1810,10 @@ class ImageEmbeddingConditionedLatentDiffusion(LatentDiffusion):
         self._init_embedder(embedder_config, freeze_embedder)
         self._init_noise_aug(noise_aug_config)
 
-        if depth_stage_config is not None:
-            self.depth_model = instantiate_from_config(depth_stage_config)
-        else:
-            self.depth_model = None
+        # if depth_stage_config is not None:
+        #     self.depth_model = instantiate_from_config(depth_stage_config)
+        # else:
+        #     self.depth_model = None
 
     def _init_embedder(self, config, freeze=True):
         embedder = instantiate_from_config(config)
