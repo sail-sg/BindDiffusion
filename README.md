@@ -62,3 +62,14 @@ python main_multi_bind.py --prompt <prompt> --device cuda \
 ![t2i](assets/example_multi_modality2.png)
 ![t2i](assets/example_multi_modality3.png)
 ![t2i](assets/example_multi_modality4.png)
+
+### Contributors
+We welcome contributions and suggestions from anyone interested in this fun project!
+
+Feel free to explore the profiles of our contributors:
+- [Zhijie Lin](https://scholar.google.com/citations?user=xXMj6_EAAAAJ&hl=zh-CN)
+- [Lijuan Liu](https://scholar.google.com/citations?user=nANxp5wAAAAJ&hl=zh-CN) 
+- [Yangzihao Wang](https://scholar.google.com/citations?user=pgqVEEYAAAAJ&hl=en)
+- [Xiangyu Xu](https://scholar.google.com/citations?user=Ec5Biz4AAAAJ&hl=zh-CN)
+
+We appreciate your interest and look forward to your involvement!
