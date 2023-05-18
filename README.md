@@ -19,7 +19,7 @@ wget https://huggingface.co/stabilityai/stable-diffusion-2-1-unclip/blob/main/sd
 wget https://dl.fbaipublicfiles.com/imagebind/imagebind_huge.pth;
 ```
 
-### [An Jupyter Notebook for beginners](BindDiffusion/audio2image.ipynb)
+### [An Jupyter Notebook for beginners](./audio2image.ipynb)
 
 ### Image-conditioned generation:
 ```
