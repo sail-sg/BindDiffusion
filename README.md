@@ -67,9 +67,9 @@ python main_multi_bind.py --prompt <prompt> --device cuda \
 We welcome contributions and suggestions from anyone interested in this fun project!
 
 Feel free to explore the profiles of our contributors:
-- [Zhijie Lin](https://scholar.google.com/citations?user=xXMj6_EAAAAJ&hl=zh-CN)
-- [Lijuan Liu](https://scholar.google.com/citations?user=nANxp5wAAAAJ&hl=zh-CN) 
-- [Yangzihao Wang](https://scholar.google.com/citations?user=pgqVEEYAAAAJ&hl=en)
-- [Xiangyu Xu](https://scholar.google.com/citations?user=Ec5Biz4AAAAJ&hl=zh-CN)
+- [Zhijie Lin](https://github.com/ikuinen)
+- [Lijuan Liu](https://github.com/xyyeah) 
+- [Yangzihao Wang](https://github.com/yzhwang)
+- [Xiangyu Xu](https://github.com/xuxy09)
 
 We appreciate your interest and look forward to your involvement!
